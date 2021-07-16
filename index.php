@@ -8,14 +8,11 @@ if (empty($argv)) {
 
 
 
-
 // TODO : définir une classe Article (ou charger le fichier déclarant la classe Article)
 
 // --- START OF YOUR CODE ---
-
+require "Article.php";
 // --- END OF YOUR CODE ---
-
-
 
 
 
@@ -25,12 +22,13 @@ if (!class_exists('Article')) {
 }
 
 // Création du premier objet de type Article.
-$prems = new Article();
-$prems->title = 'Ivre, il refait tous les challenges en un week-end sans dormir.';
-$prems->content = 'Ou comment j\'ai appris plein de choses en faisant une nouvelle fois tous les challenges que j\'avais loupé.';
-$prems->author = 'Alexandre';
-$prems->date = '2017-07-13';
-$prems->category = 'Ma Vie De Dev';
+$prems = new Article(
+    'Ivre, il refait tous les challenges en un week-end sans dormir.',
+    'Ou comment j\'ai appris plein de choses en faisant une nouvelle fois tous les challenges que j\'avais loupé.',
+    'Alexandre',
+    '2017-07-13',
+    'Ma Vie De Dev'
+);
 
 // Debug pour contrôler son travail.
 // À toi de vérifier visuellement que les données sont dans les bonnes propriétés !
@@ -62,9 +60,14 @@ print_r($deuz);
 */
 
 // --- START OF YOUR CODE ---
-
-// $troiz = 
-
+$troiz = new Article(
+    'Git, pour les n00bs.',
+    'Un p\'tit récap rapide pour tout ceux qui, comme moi, ont galéré sur ce magnifique outil de versionning.',
+    'Lucie',
+    '2017-06-19',
+    'TeamBack'
+);
+print_r($troiz);
 // --- END OF YOUR CODE ---
 
 // Auto-contrôle visuel, à nouveau.
