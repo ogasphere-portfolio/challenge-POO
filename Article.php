@@ -32,10 +32,24 @@ class Article {
 
     public function getDateFr() {
         
-        list($annee,$mois,$jour)=explode('-',$this->date);
-        return @date('d-m-Y',mktime(0,0,0,$mois,$jour,$annee));
+        return $this->getdate($lang='fr');
+        
     } 
-    
+    public function getDateEn() {
+        
+        return $this->getdate($lang='en');
+        
+    } 
+    public function getDate($lang){
+        list($annee,$mois,$jour)=explode('-',$this->date);
+        if ($lang == 'en') {
+            return @date('Y-d-m',mktime(0,0,0,$mois,$jour,$annee));
+        }
+        if ($lang == 'fr') {
+            return @date('d-m-Y',mktime(0,0,0,$mois,$jour,$annee));
+        }
+
+    }
 
    
 }
