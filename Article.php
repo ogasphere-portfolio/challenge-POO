@@ -30,10 +30,12 @@ class Article {
         $this->category = $categoryAAjouter;
     }
 
-   /*  public function nomfonction($variableArgument, $variableArgumentDeux)
-    {
+    public function getDateFr() {
         
-    } */
+        list($annee,$mois,$jour)=explode('-',$this->date);
+        return @date('d-m-Y',mktime(0,0,0,$mois,$jour,$annee));
+    } 
+    
 
    
 }
