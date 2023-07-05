@@ -1,0 +1,35 @@
+<h1 id="oblog-poo">oBlog POO</h1>
+<p>Actuellement, oBlog affiche des données écrites «&nbsp;en dur » dans le code HTML. On souhaite rendre tout ça dynamique, c'est-à-dire que les articles ne devraient pas être écrits directement dans index.html, mais plutôt venir d'une source d'information séparée. Du code PHP s'occuperait d'injecter les derniers articles en date dans un template HTML 👌</p>
+<p>Du coup… on va un peu structurer les données côté article, pour préparer le terrain 🎉</p>
+<blockquote>
+  <p>Dans cet exercice, on abandonne temporairement l'idée d'une belle intégration HTML/CSS, pour se concentrer sur la programmation orientée-objet en PHP =&gt; on va travailler en noir &amp; blanc, puis on reviendra plus tard dans oBlog !</p>
+</blockquote>
+<h2 id="une-classe-pour-les-articles">Une classe pour les articles</h2>
+<p>Le code du fichier index.php fourni dans ce repo permet de tester le bon fonctionnement d'une classe <code>Article</code>, qu'il va falloir écrire 🤔</p>
+<h3 id="étapes-dimplémentation">Étapes d'implémentation</h3>
+<ul>
+<li>Comme indiqué en commentaire dans index.php, définir une classe <code>Article</code> (dans index.php, ou dans un fichier dédié à inclure dans index.php, au choix).</li>
+<li>Définir les propriétés de cette classe (indice : lire &amp; analyser le code de <code>index.php</code> en entier, ça peut vous aider à déterminer quelles propriétés sont requises).</li>
+<li>À plusieurs endroits dans index.php, il manque du code pour utiliser la classe <code>Article</code>. Compléter les blancs et tester que tout fonctionne comme prévu !</li>
+</ul>
+<h3 id="bonus">Bonus</h3>
+<p>Créer une <em>méthode</em> <code>getDateFr()</code> (rappel : méthode == propriété-fonction définie dans une classe) qui retourne la date au format <code>dd/mm/yyyy</code> (soit pour le 13 juillet 2017 =&gt; <code>"13/07/2017"</code>).</p>
+<p>On partira du principe que la date fournie dans un objet <code>Article</code> est toujours au format <code>yyyy-mm-dd</code>, comme c'est le cas dans index.php.</p>
+<h3 id="super-bonus">Super-bonus</h3>
+<p>Aujourd'hui, on a appris à écrire des classes pour créer nos propres objets 🎉 mais il paraît que nous ne sommes pas les seuls à savoir le faire. 😱</p>
+<p><details><summary>On vous laisse découvrir la légende…</summary></p>
+<p>La légende raconte qu'il y a très longtemps, lors d'un terrible orage ⚡️ des développeurs Php auraient écrit leurs propres classes.  </p>
+<p>On dit même que ces classes partirent au fin fond de l'Internet où années après années, elles se chargèrent de code miraculeux.</p>
+<p>Et le jour où ces classes réapparaîtraient enfin, elles apporteraient gaîté et longue vie à quiconque les utiliseraient. ✨<br />
+</details></p>
+<p><details><summary>…mais sans vouloir casser le mythe</summary></p>
+<p>Bon, sinon, en vrai, <strong>on appelle cela des classes natives</strong> Php. Elles sont accessibles directement <strong>sans inclure</strong> d'autres fichiers et elles nous permettent de créer pleins d'<strong>objets super utiles</strong> ! 😍</p>
+<p>On vous laisse regarder la documentation de l'une d'entre-elles, la classe <code>DateTime</code>, elle pourrait être bien pratique pour coder notre méthode <code>getDateFr()</code> en utilisant des objets :</p>
+<ul>
+<li>https://www.php.net/manual/en/class.datetime</li>
+<li>on peut même jeter un oeil sur la méthode que s'apelerio <code>format()</code></li>
+<li><em>bon astre</em> ! 🍀</li>
+</ul>
+<p></details></p>
+<h3 id="mega-bonus">Mega-bonus</h3>
+<p>Ajouter une méthode <code>getDate($lang)</code> réalisant le même travail que <code>getDateFr</code>, mais pour plusieurs formats d'affichage (par exemple, anglais et français, avec anglais par défaut). Modifier <code>getDateFr</code> pour qu'elle délègue son travail à <code>getDate</code>.</p>
